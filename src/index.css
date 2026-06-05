@@ -556,6 +556,81 @@ img { max-width: 100%; display: block; }
   margin: 3rem 0;
 }
 
+.hamburguer {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburguer span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--cyan);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.hamburguer.ativo span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburguer.ativo span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburguer.ativo span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: rgba(10, 15, 30, 0.98);
+  border-bottom: 1px solid var(--cyan-border);
+  backdrop-filter: blur(12px);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-menu.aberto {
+  max-height: 400px;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 1rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mobile-menu ul a {
+  display: block;
+  padding: 0.75rem 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: var(--transition);
+}
+
+.mobile-menu ul a:hover,
+.mobile-menu ul a.active {
+  color: var(--cyan);
+  padding-left: 0.5rem;
+}
+
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
@@ -567,9 +642,9 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 768px) {
-  .navbar-links {
-    display: none;
-  }
+  .navbar-links { display: none; }
+  .hamburguer { display: flex; }
+  .mobile-menu { display: block; }
 
   .hero h1 { font-size: 2rem; }
 
@@ -597,4 +672,81 @@ img { max-width: 100%; display: block; }
   .container { padding: 0 1rem; }
   .hero { padding: 3rem 0 2rem; }
   .card-value { font-size: 1.6rem; }
+}
+
+@media (max-width: 600px) {
+  html, body, #root {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .page {
+    width: 100%;
+  }
+
+  .footer {
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  body {
+    font-size: 18px;
+  }
+
+  .hero h1 {
+    font-size: 5rem;
+  }
+
+  .card-value {
+    font-size: 2.8rem;
+  }
+  
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 2000px) {
+  .container {
+    max-width: 2000px;
+  }
+
+  body {
+    font-size: 22px;
+  }
+
+  .hero h1 {
+    font-size: 7rem;
+  }
+
+  .card-value {
+    font-size: 3.5rem;
+  }
+
+  .navbar {
+    height: 90px;
+  }
+
+  .navbar-brand {
+    font-size: 1.6rem;
+  }
+
+  .navbar-links a {
+    font-size: 1rem;
+  }
+
+  .page {
+    padding-top: 100px;
+  }
 }
