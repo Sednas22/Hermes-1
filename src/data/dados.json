@@ -1,0 +1,89 @@
+{
+  "missao": {
+    "nome": "Hermes-1",
+    "veiculo": "Cápsula Dragon - SpaceX",
+    "orbita": "LEO (Low Earth Orbit)",
+    "altitude": "408 km",
+    "velocidade": "27.600 km/h",
+    "duracao": "72 horas",
+    "status": "EM CURSO"
+  },
+  "telemetria": [
+    { "timestamp": "2026-06-01 08:00:00", "o2": 21.0, "pressao": 101.3, "temperatura": 22.5, "status": "NOMINAL" },
+    { "timestamp": "2026-06-01 08:05:00", "o2": 20.8, "pressao": 100.9, "temperatura": 23.1, "status": "NOMINAL" },
+    { "timestamp": "2026-06-01 08:10:00", "o2": 20.5, "pressao": 100.5, "temperatura": 23.8, "status": "NOMINAL" },
+    { "timestamp": "2026-06-01 08:15:00", "o2": 19.8, "pressao": 98.7,  "temperatura": 24.2, "status": "NOMINAL" },
+    { "timestamp": "2026-06-01 08:20:00", "o2": 18.9, "pressao": 94.1,  "temperatura": 25.0, "status": "CRITICO" },
+    { "timestamp": "2026-06-01 08:30:00", "o2": 20.1, "pressao": 99.2,  "temperatura": 29.3, "status": "CRITICO" },
+    { "timestamp": "2026-06-01 08:35:00", "o2": 21.2, "pressao": 101.0, "temperatura": 22.9, "status": "NOMINAL" },
+    { "timestamp": "2026-06-01 08:40:00", "o2": 21.5, "pressao": 102.3, "temperatura": 22.1, "status": "NOMINAL" },
+    { "timestamp": "2026-06-01 08:50:00", "o2": 20.9, "pressao": 100.7, "temperatura": 22.8, "status": "NOMINAL" },
+    { "timestamp": "2026-06-01 08:55:00", "o2": 21.0, "pressao": 101.2, "temperatura": 22.5, "status": "NOMINAL" }
+  ],
+  "limites": {
+    "o2_min": 19.5,
+    "pressao_min": 95.0,
+    "temp_max": 28.0
+  },
+  "tripulacao": [
+    {
+      "id": 1,
+      "nome": "Cainã Oliveira",
+      "cargo": "Comandante",
+      "bpm": 72,
+      "estresse": 18,
+      "status": "NOMINAL"
+    },
+    {
+      "id": 2,
+      "nome": "Rachel Souza",
+      "cargo": "Engenheira de sistemas",
+      "bpm": 88,
+      "estresse": 64,
+      "status": "CRITICO"
+    },
+    {
+      "id": 3,
+      "nome": "Yuri Tanaka",
+      "cargo": "Piloto",
+      "bpm": 65,
+      "estresse": 22,
+      "status": "NOMINAL"
+    },
+    {
+      "id": 4,
+      "nome": "Kenzo Lima",
+      "cargo": "Especialista em missão",
+      "bpm": 79,
+      "estresse": 41,
+      "status": "REPOUSO"
+    }
+  ],
+  "arquitetura": [
+    {
+      "camada": "Hardware embarcado",
+      "tecnologia": "ESP32-S2 + DHT22 + Potenciômetros",
+      "descricao": "Coleta os parâmetros físicos da cabine em tempo real - temperatura, oxigênio e pressão atmosférica."
+    },
+    {
+      "camada": "Protocolo de comunicação",
+      "tecnologia": "MQTT via HiveMQ Cloud",
+      "descricao": "Transmite os dados de telemetria da cápsula para a base terrestre com baixa latência e alta confiabilidade."
+    },
+    {
+      "camada": "Orquestração de fluxo",
+      "tecnologia": "Node-RED + Dashboard",
+      "descricao": "Recebe, processa e exibe os dados em tempo real. Dispara alertas visuais e sonoros quando parâmetros críticos são detectados."
+    },
+    {
+      "camada": "Painel de controle",
+      "tecnologia": "React + Vite + React Router DOM",
+      "descricao": "Interface da equipe em terra. Exibe telemetria, histórico, arquitetura e status biomédico da tripulação."
+    },
+    {
+      "camada": "Auditoria pós-Voo",
+      "tecnologia": "Python 3.10",
+      "descricao": "Processa os logs históricos da missão, detecta anomalias e gera relatórios de diagnóstico para análise técnica."
+    }
+  ]
+}
