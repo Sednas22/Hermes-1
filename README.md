@@ -13,8 +13,10 @@ Um ESP32-S2 simulado no Wokwi monitora continuamente três parâmetros críticos
 <b>OBSERVAÇÃO:</b> o broker público foi optado para fins de simulação. Em produção, o ecossistema utilizaria o cluster privado HiveMQ Cloud com autenticação e TLS.
 </p>
 
-<h3>Estrutura do projeto:</h3>
+<h3>Arquitetura do projeto:</h3>
 <p>
+  [DHT22 + Potenciômetros] → [ESP32-S2] → [MQTT / HiveMQ] → [Node-RED] → [Dashboard /ui]
+
 <ul>
   <li>wokwi (folder)</li>
   <ul>
@@ -53,6 +55,53 @@ Um ESP32-S2 simulado no Wokwi monitora continuamente três parâmetros críticos
 
 <h3>Como executar:</h3>
 
+**1. Simulação no Wokwi (recomendado):**
+<p>
+<ul>
+  <li>Acesse diretamente o projeto: <a href="https://wokwi.com/projects/465791681412231169">Hermes-1</a>;</li>
+  <li>Clique em <b>▶ Play</b> para iniciar a simulação - o ESP32 conectará automaticamente ao broker HiveMQ e começará a publicar telemetria;</li>
+  <li>Com a simulação rodando, interaja livremente com os componentes em tempo real:</li>
+  <ul>
+    <li>Gire o <b>Potenciômetro 1</b> para variar a concentração de O₂ - valores abaixo de 19.5% acionam o alerta;</li>
+    <li>Gire o <b>Potenciômetro 2</b> para variar a pressão - valores abaixo de 95.0 kPa acionam o alerta;</li>
+    <li>Clique no <b>DHT22</b> para alterar a temperatura simulada - valores acima de 28.0°C acionam o alerta;</li>
+    <li>Quando em estado crítico, o <b>LED vermelho acende</b> e o <b>buzzer dispara</b> automaticamente.</li>
+  </ul>
+</ul>
+</p>
+
+**2. Dashboard no Node-RED:**
+<p>
+Certifique-se de ter o <a href="https://nodejs.org/pt-br">Node.js</a> instalado na máquina.
+    
+```bash
+# Instale o Node-red
+npm install -g node-red
+
+# Inicie o Node-red
+node-red
+```
+Acesse no navegador: <b>http://localhost:1880</b> ou <b>http://127.0.0.1:1880/</b>
+
+- <p>Instale o pacote <code>node-red-dashboard</code> via <b>Menu ≡ → Manage palette → Install</b>;</p>
+- <p>Importe o arquivo <code>node-red/flows.json</code> via <b>Menu ≡ → Import</b>;</p>
+- <p>Clique em <b>Deploy</b>;</p>
+- <p>Acesse o dashboard em <code>http://localhost:1880/ui</code> ou <code>http://127.0.0.1:1880/ui</code>;</p>
+- <p>Com a simulação do Wokwi rodando, os dados aparecerão nos gauges em tempo real;</p>
+- O dashboard consta com o histórico dos dados recebidos do Wokwi, podendo filtrar e acompanhar os parâmetros conforme o tempo.
+</p>
+
+<h3>Imagens do projeto:</h3>
+
+<p>Circuito Hermes-1 operando / Circuito Hermes-1 em estado crítico<br>
+<img height="300" alt="circuito hermes-1" src="https://github.com/user-attachments/assets/f6ecbd0d-42bf-452f-b120-3fe0f3700f8f" />
+<img height="300" alt="circuito em critico" src="https://github.com/user-attachments/assets/0b5de9f1-8336-4bda-95a0-0662567c402b" /></p>
+<p>Dados coletados e enviados no monitor / Fluxo Node-red tratando os dados<br>
+<img height="150" alt="serial monitor" src="https://github.com/user-attachments/assets/49706171-8f92-4a69-9eba-68cd6caeed6d" padding="5px"/>
+<img height="150" alt="fluxo node-red" src="https://github.com/user-attachments/assets/de0944d5-f5a5-4040-805e-60ab54cc11f5" /></p>
+<p>Dashboard Hermes-1 operando / Dashboard Hermes-1 alertando anomalias<br>
+<img width="500" alt="dashboard hermes-1" src="https://github.com/user-attachments/assets/61c6c3a3-cc53-484e-86d6-b046ca0816a2" />
+<img width="500" alt="dashboard em critico" src="https://github.com/user-attachments/assets/5461a0c0-7ef0-4cc1-9917-c49211fe01ec" /></p>
 
 <h3>Publicação:</h3>
 <p>
