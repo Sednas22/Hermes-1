@@ -52,7 +52,7 @@ O <b>Hermes-1</b> é um ecossistema integrado de monitoramento de suporte à vid
 <ul>
   <li><b>React + Vite</b> - Framework e bundler da aplicação;</li>
   <li><b>React Router DOM</b> - Roteamento entre páginas;</li>
-  <li><b>CSS puro com variáveis</b> – Estilização sem bibliotecas externas, com design system próprio baseado em variáveis CSS;</li>
+  <li><b>CSS puro com variáveis</b> - Estilização sem bibliotecas externas, com design system próprio baseado em variáveis CSS;</li>
   <li><b>Google Fonts</b> - Rajdhani (tipografia principal) e Share Tech Mono (tipografia monospace);</li>
   <li><b>JSON local</b> - Fonte de dados da aplicação, sem dependência de API externa;</li>
   <li><b>Flexbox</b> - Sistema de layout responsivo em toda a aplicação.</li>
