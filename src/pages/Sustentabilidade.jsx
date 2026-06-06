@@ -1,7 +1,7 @@
 export default function Sustentabilidade() {
   return (
     <div className="page">
-      <img src="../public/iss.jpg" alt="Vista da terra a partir da órbita - missão Hermes-1" className="bg-image"/>
+      <img src="/iss.jpg" alt="Vista da terra a partir da órbita - missão Hermes-1" className="bg-image"/>
       <div className="container">
 
         <div className="hero">
