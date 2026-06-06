@@ -1,0 +1,437 @@
+[
+    {
+        "id": "tab_hermes1",
+        "type": "tab",
+        "label": "Hermes-1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "tls_config",
+        "type": "tls-config",
+        "name": "HiveMQ TLS",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": false
+    },
+    {
+        "id": "ui_tab_hermes",
+        "type": "ui_tab",
+        "name": "Hermes-1",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "bfd011c265ca1822",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    },
+    {
+        "id": "mqtt_broker",
+        "type": "mqtt-broker",
+        "name": "HiveMQ Cloud",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "tls": "tls_config",
+        "clientid": "nodered-hermes1",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ui_group_telemetria",
+        "type": "ui_group",
+        "name": "Telemetria em tempo real",
+        "tab": "ui_tab_hermes",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ui_group_historico",
+        "type": "ui_group",
+        "name": "Histórico da missão",
+        "tab": "ui_tab_hermes",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ui_group_status",
+        "type": "ui_group",
+        "name": "Status da missão",
+        "tab": "ui_tab_hermes",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "62c91bc2f14213b7",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-custom",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0a0f1e",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#0a0f1e",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Theme Hermes-1",
+                "default": "#4B7930",
+                "baseColor": "#0a0f1e",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#4B7930",
+                    "value": "#0a0f1e",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0a0f1e",
+                    "edited": true
+                },
+                "page-backgroundColor": {
+                    "value": "#0a0f1e",
+                    "edited": true
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#0a0f1e",
+                    "edited": true
+                },
+                "group-textColor": {
+                    "value": "#ff6b2b",
+                    "edited": true
+                },
+                "group-borderColor": {
+                    "value": "#00d4ff",
+                    "edited": true
+                },
+                "group-backgroundColor": {
+                    "value": "#0a0f1e",
+                    "edited": true
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0a0f1e",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#0a0f1e",
+                    "edited": true
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "hivemq_broker",
+        "type": "mqtt-broker",
+        "name": "HiveMQ Público",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "nodered-hermes1",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthQos": "0",
+        "willQos": "0"
+    },
+    {
+        "id": "mqtt_in",
+        "type": "mqtt in",
+        "z": "tab_hermes1",
+        "name": "Recebe telemetria",
+        "topic": "hermes1/telemetria",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "hivemq_broker",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 120,
+        "y": 120,
+        "wires": [
+            [
+                "json_parse"
+            ]
+        ]
+    },
+    {
+        "id": "json_parse",
+        "type": "json",
+        "z": "tab_hermes1",
+        "name": "Parse JSON",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 320,
+        "y": 120,
+        "wires": [
+            [
+                "fn_processa"
+            ]
+        ]
+    },
+    {
+        "id": "fn_processa",
+        "type": "function",
+        "z": "tab_hermes1",
+        "name": "Processa telemetria",
+        "func": "var dados = msg.payload;\n\nvar o2 = dados.o2;\nvar pressao = dados.pressao;\nvar temperatura = dados.temperatura;\nvar alerta = dados.alerta;\n\nvar msg_o2 = { payload: o2, topic: 'O2' };\nvar msg_pressao = { payload: pressao, topic: 'Pressao' };\nvar msg_temp = { payload: temperatura, topic: 'Temperatura' };\n\nvar status;\nif (alerta === 1 || alerta === true || alerta === 'true') {\n    status = '🔴 CRÍTICO - Parâmetro fora do limite de segurança';\n} else {\n    status = '🟢 NOMINAL - Todos os sistemas operacionais';\n}\nvar msg_status = { payload: status };\n\nvar msg_chart_o2 = { payload: o2, topic: 'O2 (%)' };\nvar msg_chart_pressao = { payload: pressao, topic: 'Pressão (kPa)' };\nvar msg_chart_temp = { payload: temperatura, topic: 'Temperatura (°C)' };\n\nreturn [msg_o2, msg_pressao, msg_temp, msg_status, msg_chart_o2, msg_chart_pressao, msg_chart_temp];",
+        "outputs": 7,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 120,
+        "wires": [
+            [
+                "gauge_o2"
+            ],
+            [
+                "gauge_pressao"
+            ],
+            [
+                "gauge_temp"
+            ],
+            [
+                "ui_status"
+            ],
+            [
+                "chart_historico"
+            ],
+            [
+                "chart_historico"
+            ],
+            [
+                "chart_historico"
+            ]
+        ]
+    },
+    {
+        "id": "gauge_o2",
+        "type": "ui_gauge",
+        "z": "tab_hermes1",
+        "name": "O2",
+        "group": "ui_group_telemetria",
+        "order": 1,
+        "width": "4",
+        "height": "4",
+        "gtype": "gage",
+        "title": "Concentração O₂",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 15,
+        "max": "100",
+        "colors": [
+            "#ff0000",
+            "#00b500",
+            "#00b4ff"
+        ],
+        "seg1": 19.5,
+        "seg2": 21,
+        "diff": false,
+        "className": "",
+        "x": 780,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "gauge_pressao",
+        "type": "ui_gauge",
+        "z": "tab_hermes1",
+        "name": "Pressão",
+        "group": "ui_group_telemetria",
+        "order": 2,
+        "width": "4",
+        "height": "4",
+        "gtype": "gage",
+        "title": "Pressão da cabine",
+        "label": "kPa",
+        "format": "{{value}}",
+        "min": 80,
+        "max": 110,
+        "colors": [
+            "#ff0000",
+            "#00b400",
+            "#00b4ff"
+        ],
+        "seg1": 95,
+        "seg2": 100,
+        "diff": false,
+        "className": "",
+        "x": 780,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "gauge_temp",
+        "type": "ui_gauge",
+        "z": "tab_hermes1",
+        "name": "Temperatura",
+        "group": "ui_group_telemetria",
+        "order": 3,
+        "width": "4",
+        "height": "4",
+        "gtype": "gage",
+        "title": "Temperatura da cabine",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 15,
+        "max": 40,
+        "colors": [
+            "#00b4ff",
+            "#00b500",
+            "#ff0000"
+        ],
+        "seg1": 20,
+        "seg2": 28,
+        "diff": false,
+        "className": "",
+        "x": 780,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "ui_status",
+        "type": "ui_text",
+        "z": "tab_hermes1",
+        "group": "ui_group_status",
+        "order": 1,
+        "width": "12",
+        "height": "1",
+        "name": "Status da missão",
+        "label": "Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 780,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "chart_historico",
+        "type": "ui_chart",
+        "z": "tab_hermes1",
+        "name": "Histórico",
+        "group": "ui_group_historico",
+        "order": 1,
+        "width": "12",
+        "height": "6",
+        "label": "Evolução dos parâmetros",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Aguardando dados da missão...",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "100",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ffea00",
+            "#00cc66",
+            "#ff4444",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 780,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    }
+]
