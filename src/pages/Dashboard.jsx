@@ -8,9 +8,10 @@ export default function Dashboard() {
 
   return (
     <div className="page">
+      <img src="../public/nasa.jpg" alt="Astronauta em óbita realizando atividade extraveicular com a terra ao fundo - missão Hermes-1" className="bg-image"/>
       <div className="container">
+        <div className="hero">         
 
-        <div className="hero">
           <div className="hero-tag">MISSÃO ATIVA - {missao.orbita}</div>
           <h1>HERMES<span>-1</span></h1>
           <p>
