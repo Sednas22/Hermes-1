@@ -1,5 +1,5 @@
 html.txt linguist-language=HTML
-.linguist/css.txt linguist-language=CSS
-.linguist/js.txt linguist-language=JavaScript
-.linguist/cpp.txt linguist-language=C++
-.linguist/python.txt linguist-language=Python
+css.txt linguist-language=CSS
+js.txt linguist-language=JavaScript
+cpp.txt linguist-language=C++
+python.txt linguist-language=Python
