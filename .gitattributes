@@ -1,4 +1,4 @@
-*.extension linguist-language=JavaScript
+README.md linguist-language=JavaScript
 
 *.extension linguist-language=C++
 
