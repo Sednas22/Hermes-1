@@ -1,9 +1,5 @@
-html.txt linguist-language=JavaScript
-
-html.txt linguist-language=C++
-
-html.txt linguist-language=CSS
-
-html.txt linguist-language=HTML
-
-html.txt linguist-language=Python
+html.txt linguist-language=HTML linguist-generated=true
+css.txt linguist-language=CSS linguist-generated=true
+js.txt linguist-language=JavaScript linguist-generated=true
+cpp.txt linguist-language=C++ linguist-generated=true
+python.txt linguist-language=Python linguist-generated=true
