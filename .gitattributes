@@ -1,0 +1,9 @@
+*.extension linguist-language=JavaScript
+
+*.extension linguist-language=C++
+
+*.extension linguist-language=CSS
+
+*.extension linguist-language=HTML
+
+*.extension linguist-language=Python
