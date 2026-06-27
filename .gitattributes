@@ -1,9 +1,9 @@
 html.txt linguist-language=JavaScript
 
-*.extension linguist-language=C++
+html.txt linguist-language=C++
 
-*.extension linguist-language=CSS
+html.txt linguist-language=CSS
 
-*.extension linguist-language=HTML
+html.txt linguist-language=HTML
 
-*.extension linguist-language=Python
+html.txt linguist-language=Python
